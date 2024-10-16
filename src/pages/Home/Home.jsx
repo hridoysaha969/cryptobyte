@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import "./home.css";
 import { CoinContext } from "../../context/CoinContext";
 import { Link } from "react-router-dom";
+import arrow from "../../assets/arrow_icon.png";
 
 const Home = () => {
   const { allCoin, currency } = useContext(CoinContext);
@@ -31,6 +32,30 @@ const Home = () => {
 
   return (
     <div className="home">
+      <div className="container">
+        <div className="banner">
+          <div>
+            <h1>Discover Top 5 Trending Cryptocurrencies</h1>
+            <p>
+              Get real-time updates on the {"market's"} top 5 cryptocurrencies.
+              Stay informed with the most important details like market cap,
+              price changes, and trends — all at a glance. For full access to
+              over 100+ cryptocurrencies and in-depth insights, sign up today!
+            </p>
+            <p className="cta-wrapper">
+              <button className="call-to-action">
+                Signup
+                <img src={arrow} alt="Signup arrow" />
+              </button>
+              for Full Market Access
+            </p>
+          </div>
+          <div>
+            <img src="/crypto.png" />
+          </div>
+        </div>
+      </div>
+
       <div className="hero">
         <h1>
           Largest <br /> Crypto Marketplace
@@ -57,7 +82,9 @@ const Home = () => {
               ))}
           </datalist>
 
-          <button type="submit">Search</button>
+          <button type="submit" className="search">
+            Search
+          </button>
         </form>
       </div>
 
@@ -70,7 +97,7 @@ const Home = () => {
           <p className="market-cap">Market Cap</p>
         </div>
 
-        {displayCoin.slice(0, 10).map((item, ind) => (
+        {displayCoin.slice(0, 5).map((item, ind) => (
           <Link to={`/coin/${item.id}`} key={ind} className="table-layout">
             <p>{item.market_cap_rank}</p>
             <div>

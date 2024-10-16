@@ -37,25 +37,16 @@
   background-color: #09005c;
   color: white;
 }
-.navbar button {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 25px;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  font-size: 15px;
-  font-weight: 500;
-  color: #393939;
-  background: white;
+.menu-btn {
+  display: none;
+  background: #fff;
   border: none;
-  cursor: pointer;
+  outline: none;
+  padding: 0.45rem 0.3rem;
+  border-radius: 0.3rem;
 }
-.navbar button img {
-  width: 13px;
+.menu-btn img {
+  width: 15px;
 }
 
 @media (max-width: 900px) {
@@ -75,7 +66,10 @@
   .navbar ul {
     display: none;
   }
-  .navbar button img {
-    width: 12px;
+  .menu-btn {
+    display: block;
   }
+  /* .navbar button img {
+    width: 12px;
+  } */
 }

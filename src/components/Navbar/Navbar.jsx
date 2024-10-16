@@ -1,6 +1,7 @@
 import "./navbar.css";
 import logo from "../../assets/logo.png";
-import arrow from "../../assets/arrow_icon.png";
+import menu from "../../assets/menu.svg";
+
 import { useContext } from "react";
 import { CoinContext } from "../../context/CoinContext";
 import { Link } from "react-router-dom";
@@ -38,7 +39,9 @@ const Navbar = () => {
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li>Explore</li>
+        <li>
+          <Link to="/feature">Explore</Link>
+        </li>
       </ul>
 
       <div className="nav-right">
@@ -48,9 +51,8 @@ const Navbar = () => {
           <option value="bdt">BDT</option>
         </select>
 
-        <button>
-          Signup
-          <img src={arrow} alt="Signup arrow" />
+        <button className="menu-btn">
+          <img src={menu} alt="menu" />
         </button>
       </div>
     </div>

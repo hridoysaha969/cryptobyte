@@ -1,3 +1,9 @@
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0 15px;
+}
 .home {
   padding: 0 10px;
   padding-bottom: 100px;
@@ -11,6 +17,7 @@
   text-align: center;
   gap: 30px;
 }
+
 .hero h1 {
   font-size: max(4vw, 36px);
 }
@@ -18,6 +25,53 @@
   width: 75%;
   color: #e3e3e3;
   line-height: 1.5;
+}
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  gap: 1.25rem;
+  margin-top: 5rem;
+}
+.banner h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.65rem;
+}
+.banner div:first-child {
+  width: 60%;
+}
+.banner div:last-child {
+  width: 40%;
+}
+.banner div:last-child img {
+  max-width: 100%;
+}
+.cta-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+.banner button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 25px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #393939;
+  background: white;
+  border: none;
+  cursor: pointer;
+}
+.banner button img {
+  width: 13px;
 }
 .hero form {
   padding: 8px;
@@ -41,7 +95,7 @@
   outline: none;
   padding-left: 10px;
 }
-.hero button {
+.hero button.search {
   border: none;
   background: #7927ff;
   color: white;
@@ -93,7 +147,44 @@
   color: #ff4646;
   text-align: center;
 }
-
+.padination_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  margin: 1rem 0;
+}
+.padination_wrapper button {
+  border: none;
+  outline: none;
+  padding: 0.65rem 1rem;
+  border-radius: 0.4rem;
+  background: #fff;
+  color: #7927ff;
+  cursor: pointer;
+}
+.padination_wrapper button:disabled {
+  background: gray;
+  color: #fff;
+  cursor: not-allowed;
+}
+@media (max-width: 991px) {
+  .container {
+    max-width: 98%;
+  }
+  .banner div:last-child {
+    display: none;
+  }
+  .banner div:first-child {
+    width: 100%;
+  }
+  .banner div {
+    text-align: center;
+  }
+  .cta-wrapper {
+    flex-direction: column;
+  }
+}
 @media (max-width: 768px) {
   .table-layout {
     grid-template-columns: 0.5fr 3fr 1fr 1fr;
@@ -103,6 +194,15 @@
   }
 }
 @media (max-width: 500px) {
+  .banner h1 {
+    font-size: 1.75rem;
+  }
+  .banner p {
+    font-size: 0.75rem;
+  }
+  .cta-wrapper {
+    gap: 0.5rem;
+  }
   .table-layout div img {
     width: 25px;
   }
