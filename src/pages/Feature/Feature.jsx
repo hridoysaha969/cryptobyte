@@ -70,7 +70,9 @@ const Feature = () => {
               ))}
           </datalist>
 
-          <button type="submit">Search</button>
+          <button className="search" type="submit">
+            Search
+          </button>
         </form>
       </div>
 

@@ -19,7 +19,7 @@ const Home = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const coins = await allCoin.filter((item) => {
+    const coins = await displayCoin.slice(0, 5).filter((item) => {
       return item.name.toLowerCase().includes(input.toLowerCase());
     });
 
@@ -43,9 +43,11 @@ const Home = () => {
               over 100+ cryptocurrencies and in-depth insights, sign up today!
             </p>
             <p className="cta-wrapper">
-              <button className="call-to-action">
-                Signup
-                <img src={arrow} alt="Signup arrow" />
+              <button>
+                <Link to="/signup" className="call-to-action">
+                  Signup
+                  <img src={arrow} alt="Signup arrow" />
+                </Link>
               </button>
               for Full Market Access
             </p>
@@ -77,9 +79,9 @@ const Home = () => {
 
           <datalist id="coinlist">
             {allCoin &&
-              allCoin.map((item, ind) => (
-                <option key={ind} value={item.name} />
-              ))}
+              allCoin
+                .slice(0, 5)
+                .map((item, ind) => <option key={ind} value={item.name} />)}
           </datalist>
 
           <button type="submit" className="search">
